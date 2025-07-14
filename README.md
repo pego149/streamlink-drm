@@ -1,5 +1,19 @@
-<h1 align="center"><a href="https://streamlink.github.io/">Streamlink<br><img height="150" alt="Streamlink" src="https://raw.githubusercontent.com/streamlink/streamlink/master/icon.svg"></a></h1>
+<h1 align="center"><a href="https://streamlink.github.io/">Streamlink-DRM<br><img height="150" alt="Streamlink" src="https://raw.githubusercontent.com/streamlink/streamlink/master/icon.svg"></a></h1>
 
+<p align="center">
+  Version with support for DRM streams.<br>
+  This is a fork of the original project with the goal of adding support for DRM streams.<br>
+  It is not an official Streamlink release, but a community-maintained fork.<br><br>
+  Installation:
+</p>
+
+```
+pip3 install --user -U git+https://github.com/pego149/streamlink-drm
+```
+<p align="center">
+  Usage: <br>
+  You need to use parameter -decryption-key with the key you want to use for decryption.<br>
+</p>
 <p align="center">
   <a href="https://streamlink.github.io/install.html"><img alt="Supported Python versions" src="https://img.shields.io/pypi/pyversions/streamlink.svg?style=flat-square&maxAge=86400"></a>
   <a href="https://streamlink.github.io/changelog.html"><img alt="Latest release" src="https://img.shields.io/github/release/streamlink/streamlink.svg?style=flat-square&maxAge=86400"></a>
@@ -42,7 +56,7 @@ A list of all plugins currently included can be found on the [plugins page][stre
 After installing, simply run:
 
 ```sh
-streamlink "STREAMURL" best
+streamlink -decryption-key "KEY" "STREAMURL" best
 ```
 
 The default behavior of Streamlink is to play back streams in the [VLC player][player-vlc], but a lot of other options and output methods are available, such as writing the stream to the filesystem, reading stream metadata, etc.

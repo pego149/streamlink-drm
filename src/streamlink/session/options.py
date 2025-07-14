@@ -204,6 +204,10 @@ class StreamlinkOptions(Options):
           - ``int``
           - ``3``
           - Max number of DASH manifest reload attempts before giving up
+        * - decryption-key
+          - ``str | None``
+          - ``None``
+          - Specify the decryption stream key
         * - ffmpeg-ffmpeg
           - ``str | None``
           - ``None``
@@ -301,6 +305,7 @@ class StreamlinkOptions(Options):
             "hls-segment-key-uri": None,
             "hls-audio-select": [],
             "dash-manifest-reload-attempts": 3,
+            "decryption-key": None,
             "ffmpeg-ffmpeg": None,
             "ffmpeg-no-validation": False,
             "ffmpeg-verbose": False,

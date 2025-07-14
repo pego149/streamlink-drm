@@ -1169,6 +1169,17 @@ def build_parser():
     )
 
     transport_ffmpeg.add_argument(
+        "-decryption-key",
+        metavar="FILENAME",
+        help="""
+            Use a CENC decryption key to decrypt the media that ffmpeg receives as
+            an input from the DASH streaming that you play with streamlink.
+
+            Example: -decryption-key "<hex key>"
+            """
+    )
+
+    transport_ffmpeg.add_argument(
         "--ffmpeg-ffmpeg",
         metavar="FILENAME",
         help="""
@@ -1493,6 +1504,7 @@ _ARGUMENT_TO_SESSIONOPTION: list[tuple[str, str, Callable[[Any], Any] | None]] =
     ("hls_segment_key_uri", "hls-segment-key-uri", None),
     ("hls_audio_select", "hls-audio-select", None),
     ("dash_manifest_reload_attempts", "dash-manifest-reload-attempts", None),
+    ("decryption_key", "decryption-key", None),
     ("ffmpeg_ffmpeg", "ffmpeg-ffmpeg", None),
     ("ffmpeg_no_validation", "ffmpeg-no-validation", None),
     ("ffmpeg_verbose", "ffmpeg-verbose", None),
